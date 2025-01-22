@@ -8,7 +8,7 @@ public class First {
     public static void main(String[] args) {
         System.out.println("Hola mundo!");
         System.out.println("Job title: CTAE Teacher");
-        System.out.println("Why: Using my knowlege in cyber to teach, and I enjoy working with students.");
+        System.out.println("Why: Using my knowledge in cyber to teach, and I enjoy working with students.");
         System.out.println("Median salary: $63,580");
     }
 }
