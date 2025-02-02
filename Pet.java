@@ -10,14 +10,14 @@ public class Pet {
     public Pet() {
         setName("Pet Name");
     }
-    public void setName(String name) {
-        this.name = name;
+    public void setName(String newName) {
+        this.name = newName;
     }
     public String getName() {
         return name;
     }
     public String toString() {
-    return "Pet Information:\n" + 
+    return "Pet Information:\n" +
            "Name: " + name;
     }
 
