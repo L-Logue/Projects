@@ -17,7 +17,8 @@ public class Pet {
         return name;
     }
     public String toString() {
-        return "Pet information:\nName: " + name;
+    return "Pet Information:\n" + 
+           "Name: " + name;
     }
 
     public static void main(String[] args) {
