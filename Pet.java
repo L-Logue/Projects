@@ -1,5 +1,5 @@
 /**
- * Write and code input about the value Pet  object a object that should have a name
+ * Write and code input about the value Pet a object that should have a name
  * File: Pet.java
  * Author: Lillie Logue
  * Date: 1/31/2025
