@@ -1,3 +1,9 @@
+/**
+ * Write and code input about the value Pet object a object that should have a name
+ * File: Pet.java
+ * Author: Lillie Logue
+ * Date: 02/05/2025
+ */
 public class Pet {
     private int age;
     private String name;
