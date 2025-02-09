@@ -42,7 +42,7 @@ public class Pet {
         } else if (type.equalsIgnoreCase("cat")) {
             return "Meow";
         } else {
-            return "Yowl";
+            return "Noise";
         }
     }
     public String toString() {
