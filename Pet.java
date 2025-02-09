@@ -1,34 +1,55 @@
 /**
- * Write and code input about the value Pet  object a object that should have a name
+ * Write and code input about the value Pet object a object that should have a name
  * File: Pet.java
  * Author: Lillie Logue
- * Date: 1/31/2025
+ * Date: 02/05/2025
  */
 public class Pet {
+    private int age;
     private String name;
+    private String type;
     public Pet() {
         name = "Pet Name";
+        type = "Animal";
+        age = 1;
     }
-    public Pet(String newName) {
-        name = newName;
+    public Pet(String newName, String newType, int newAge) {
+        setName(newName);
+        setType(newType);
+        setAge(newAge);
     }
-    public void setName(String newName) {
-        name = newName;
+    public int getAge() {
+        return age;
     }
     public String getName() {
         return name;
     }
+    public String getType() {
+        return type;
+    }
+    public void setAge(int newAge) {
+        age = newAge;
+    }
+    public void setName(String newName) {
+        name = newName;
+    }
+    public void setType(String newType) {
+        type = newType;
+    }
+    public String speak() {
+        if (type.equalsIgnoreCase("dog")) {
+            return "Woof";
+        } else if (type.equalsIgnoreCase("cat")) {
+            return "Meow";
+        } else {
+            return "Yowl";
+        }
+    }
     public String toString() {
         return "Pet Information:\n" +
-                "Name: " + name;
-    }
-    public static void main(String[] args) {
-        Pet pet1 = new Pet();
-        System.out.println(pet1);
-        System.out.println();
-        
-        Pet pet2 = new Pet("Buster");
-        System.out.println(pet2);
+                "Type: " + type + "\n" +
+                "Name: " + name + "\n" +
+                "Sound: " + speak() + "\n" +
+                "Age: " + age;
     }
 }
-
