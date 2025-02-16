@@ -1,18 +1,62 @@
+
 /**
- * Write and code input about 3 test score to find average
  * File: Tests.java
  * Author: Lillie Logue
- * Date: 1/25/2025
+ * Date: 2/13/2025
+ * Description: Blueprint class to input test scores, calculate the average, and display formatted output.
  */
-public class Tests {
-    public static void main(String[] args) {
-        double score1 = 52.6;
-        double score2 = 88.4;
-        double score3 = 76.8;
-        double avr = (score1 + score2 + score3) / 3;
-        System.out.println("Test score1: " + score1);
-        System.out.println("Test score2: " + score2);
-        System.out.println("Test score3: " + score3);
-        System.out.println("The average of the 3 test scores is: " + avr);
+import java.util.Scanner;
+
+public class Tests 
+{
+    private double average; 
+    private int count; 
+    
+    public Tests()
+    {
+        count = 0;
+        average = 0.0;
+    }
+
+    public void getAverage()
+    {
+        Scanner scanner = new Scanner(System.in);
+        double sum = 0;
+        count = 0;
+        
+        System.out.println("Enter test scores (-1 to quit):");
+        double score = scanner.nextDouble();
+        
+        while (score != -1)
+        {
+            sum += score;
+            count++;
+            System.out.println("Enter test scores (-1 to quit):");
+            score = scanner.nextDouble();
+        }
+        
+        if (count > 0) 
+        {
+            average = sum / count;
+        }
+        else 
+        {
+            average = 0.0; 
+        }
+    }
+
+    public double getAverageValue()
+    {
+        return average;
+    }
+
+    public int getCount()
+    {
+        return count;
+    }
+    
+    public String toString()
+    {
+        return String.format("The average of the %d scores entered is %.2f", count, average);
     }
 }
