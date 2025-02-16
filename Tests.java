@@ -3,7 +3,7 @@
  * File: Tests.java
  * Author: Lillie Logue
  * Date: 2/13/2025
- * Description: Blueprint class to input test scores, calculate the average, and display formatted output.
+ * Description:  input test scores, calculate the average, and display formatted output.
  */
 import java.util.Scanner;
 public class Tests 
