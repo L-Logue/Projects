@@ -17,48 +17,38 @@ public class Tests {
         this.count = 0;
         this.score = 0;
     }
-    
     public double getAve() {
-        return ave;
+        return this.ave;
     }
-    
     public void getAverage() {
         Scanner scanner = new Scanner(System.in);
         int sum = 0;
-        count = 0;
+        this.count = 0;
         
         System.out.println("Enter test scores (-1 to quit):");
         int input = scanner.nextInt();
         
         while (input != -1) {
             sum += input;
-            count++;
+            this.count++;
             System.out.println("Enter test scores (-1 to quit):");
             input = scanner.nextInt();
         }
         
-        if (count > 0) {
-            ave = (double) sum / count;
-        } else {
-            ave = Double.NaN;
-        }
-    }
-    
+        this.ave = (this.count > 0) ? (double) sum / this.count : Double.NaN;
+    } 
     public int getCount() {
-        return count;
+        return this.count;
     }
-    
     public int getScore() {
-        return score;
+        return this.score;
     }
-    
     public void setScore(int newScore) {
         this.score = newScore;
     }
-    
     @Override
     public String toString() {
         DecimalFormat df = new DecimalFormat("0.00");
-        return "The average of the " + count + " scores entered is " + df.format(ave);
+        return "The average of the " + this.count + " scores entered is " + df.format(this.ave);
     }
 }
