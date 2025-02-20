@@ -6,50 +6,60 @@
  * Description:  input test scores, calculate the average, and display formatted output.
  */
 import java.util.Scanner;
-public class Tests 
-{
-    private double average; 
-    private int count; 
-    public Tests()
-    {
-        count = 0;
-        average = 0.0;
+import java.text.DecimalFormat;
+
+public class Tests {
+    private double ave;
+    private int count;
+    private int score;
+    
+    public Tests() {
+        this.ave = 0.0;
+        this.count = 0;
+        this.score = 0;
     }
-    public void getAverage()
-    {
+    
+    public double getAve() {
+        return ave;
+    }
+    
+    public void getAverage() {
         Scanner scanner = new Scanner(System.in);
-        double sum = 0;
-        count = 0; 
+        int sum = 0;
+        count = 0;
+        
         System.out.println("Enter test scores (-1 to quit):");
-        double score = scanner.nextDouble();
-        while (score != -1)
-        {
-            sum += score;
+        int input = scanner.nextInt();
+        
+        while (input != -1) {
+            sum += input;
             count++;
             System.out.println("Enter test scores (-1 to quit):");
-            score = scanner.nextDouble();
+            input = scanner.nextInt();
         }
         
-        if (count > 0) 
-        {
-            average = sum / count;
-        }
-        else 
-        {
-            average = 0.0; 
+        if (count > 0) {
+            ave = (double) sum / count;
+        } else {
+            ave = Double.NaN;
         }
     }
-    public double getAverageValue()
-    {
-        return average;
-    }
-
-    public int getCount()
-    {
+    
+    public int getCount() {
         return count;
     }
-    public String toString()
-    {
-        return String.format("The average of the %d scores entered is %.2f", count, average);
+    
+    public int getScore() {
+        return score;
+    }
+    
+    public void setScore(int newScore) {
+        this.score = newScore;
+    }
+    
+    @Override
+    public String toString() {
+        DecimalFormat df = new DecimalFormat("0.00");
+        return "The average of the " + count + " scores entered is " + df.format(ave);
     }
 }
