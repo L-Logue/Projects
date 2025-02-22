@@ -1,9 +1,11 @@
-//this class tests all methods in the Calc class
-//the Calc class exposes the following methods:
-//add, subtract, multiply, divide
-//user is prompted for input
+/**
+ * File: Calc.java
+ * Author: Lillie Logue
+ * Date: 2/17/2025
+ * Description: this class tests all methods in the Calc class 
+ */
 import java.util.Scanner;
-public class Runner {
+public class runner {
     public static void main(String[] args){
         //instantiate a Calc object
         Calc myCalculator = new Calc();
