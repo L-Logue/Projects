@@ -1,5 +1,5 @@
 /**
- * File: Calc.java
+ * File: runner.java
  * Author: Lillie Logue
  * Date: 2/17/2025
  * Description: this class tests all methods in the Calc class 
