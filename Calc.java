@@ -1,3 +1,10 @@
+/**
+ * File: Calc.java
+ * Author: Lillie Logue
+ * Date: 2/17/2025
+ * Description: This program defines a Calc class that allows basic order of 
+ * operations on two numbers. 
+ */
 public class Calc {
     private double num1;
     private double num2;
