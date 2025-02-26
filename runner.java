@@ -1,20 +1,24 @@
 /**
  * File: runner.java
  * Author: Lillie Logue
- * Date: 2/17/2025
- * Description: this class tests all methods in the Calc class 
+ * Date: 2/26/2025
+ * Description: This class tests all methods in the Calc class.
  */
+
 import java.util.Scanner;
+
 public class runner {
-    public static void main(String[] args){
+    public static void main(String[] args) {
         //instantiate a Calc object
         Calc myCalculator = new Calc();
         //get user input for two numbers
         Scanner scan = new Scanner(System.in);
+
         System.out.println("Please enter the first number: ");
-        double n1 = scan.nextDouble();
+        double n1 = getValidNumber(scan);
+
         System.out.println("Please enter the second number: ");
-        double n2 = scan.nextDouble();
+        double n2 = getValidNumber(scan);
 
         //pass the numbers to the Calc object
         myCalculator.setNum1(n1);
@@ -36,5 +40,18 @@ public class runner {
         System.out.println("The difference is: " + myCalculator.subtract());
         System.out.println("The product is: " + myCalculator.multiply());
         System.out.println("The quotient is: " + myCalculator.divide());
+    }
+
+    private static double getValidNumber(Scanner scanner) {
+        while (true) {
+            if (scanner.hasNextDouble()) {
+                double number = scanner.nextDouble();
+                scanner.nextLine();
+                return number;
+            } else {
+                System.out.println("Invalid input! Please enter a valid number.");
+                scanner.nextLine();
+            }
+        }
     }
 }
