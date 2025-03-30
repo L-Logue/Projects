@@ -13,4 +13,12 @@ public class Exam extends Assessment {
     public double getPointsEach() {
         return pointsEach;
     }
+
+    @Override
+    public String toString() {
+        return "Exam [Total Questions: " + numQuestions + 
+               ", Missed Questions: " + numMissed + 
+               ", Score: " + getScore() + 
+               ", Grade: " + getGrade() + "]";
+    }
 }
