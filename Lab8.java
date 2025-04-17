@@ -6,32 +6,7 @@ public class Lab8 {
         String inputFile = "pay.csv";
         String outputFile = "output.csv";
 
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(inputFile))) {
-            writer.write("EmpID,PayRate,HoursWorked");
-            writer.newLine();
-            writer.write("101,25.25,45");
-            writer.newLine();
-            writer.write("234,28.5,50");
-            writer.newLine();
-            writer.write("342,30,40");
-            writer.newLine();
-            writer.write("767,24.5,45");
-            writer.newLine();
-            writer.write("833,28.75,48");
-            writer.newLine();
-            writer.write("135,35.5,40");
-            writer.newLine();
-            writer.write("674,40.25,40");
-            writer.newLine();
-            writer.write("552,30.25,40");
-            writer.newLine();
-            System.out.println("pay.csv file created.");
-        } catch (IOException e) {
-            System.out.println("Error creating pay.csv: " + e.getMessage());
-            return;
-        }
-
-        DecimalFormat df = new DecimalFormat("$#,##0.00");
+        DecimalFormat df = new DecimalFormat("$0.00");
 
         try (
             BufferedReader reader = new BufferedReader(new FileReader(inputFile));
@@ -52,9 +27,9 @@ public class Lab8 {
                     continue;
                 }
 
-                String empID = parts[0];
-                double payRate = Double.parseDouble(parts[1]);
-                double hoursWorked = Double.parseDouble(parts[2]);
+                String empID = parts[0].trim();
+                double payRate = Double.parseDouble(parts[1].trim());
+                double hoursWorked = Double.parseDouble(parts[2].trim());
 
                 double weeklyPay;
                 if (hoursWorked > 40) {
