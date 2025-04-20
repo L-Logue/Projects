@@ -12,17 +12,14 @@ public class Towers {
         this.moveDiscs(this.numDiscs, 1, 3, 2); 
     }
 
-    //The moveDisc method displays a disc move using a recursive algorithm 
-    private void moveDiscs(int num, int fromPeg, 
-                           int toPeg, int tempPeg) {
-        if (num > 0) {
-            // recursive call - makes another whole copy of the method in RAM
-            moveDiscs(num - 1, tempPeg, toPeg, fromPeg);
-            System.out.println("Move a disk from peg " + 
-                   fromPeg + " to peg " + toPeg);
-        
-
-            moveDiscs(num - 1, tempPeg, toPeg, fromPeg);
+    // The moveDiscs method displays a disc move using a recursive algorithm 
+    private void moveDiscs(int num, int fromPeg, int toPeg, int tempPeg) {
+        if (num == 1) {
+            System.out.println("Move disk 1 from peg " + fromPeg + " to peg " + toPeg);
+        } else {
+            moveDiscs(num - 1, fromPeg, tempPeg, toPeg); // Step 1
+            System.out.println("Move disk " + num + " from peg " + fromPeg + " to peg " + toPeg); // Step 2
+            moveDiscs(num - 1, tempPeg, toPeg, fromPeg); // Step 3
         }
     }
 }
