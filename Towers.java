@@ -17,6 +17,7 @@ public class Towers {
                            int toPeg, int tempPeg) {
         if (num > 0) {
             // recursive call - makes another whole copy of the method in RAM
+            moveDiscs(num - 1, tempPeg, toPeg, fromPeg);
             System.out.println("Move a disk from peg " + 
                    fromPeg + " to peg " + toPeg);
         
